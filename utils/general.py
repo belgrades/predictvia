@@ -28,6 +28,6 @@ def log(*args, **kwargs):
                 logging.debug("[%s]: %s" % (TimestampVenezuela(), arg))
         else:
             if 'label' in kwargs:
-                logging.predictvia("[%s]: %s %s" % (TimestampVenezuela(), kwargs['label'], arg))
+                logging.predictvia("[%s]: \n %s %s" % (TimestampVenezuela(), kwargs['label'], arg))
             else:
-                logging.predictvia("[%s]: %s" % (TimestampVenezuela(), arg))
+                logging.predictvia("[%s]: \n %s" % (TimestampVenezuela(), arg))
