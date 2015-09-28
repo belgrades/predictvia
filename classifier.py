@@ -15,7 +15,7 @@ class RandomForest_scikit(object):
     def __init__(self, estimators = None):
         # default params
         if estimators:
-            self.model = RandomForestClassifier(n_estimators = estimators)
+            self.model = RandomForestClassifier(n_estimators=estimators)
         else:
             self.model = RandomForestClassifier()
 
@@ -60,15 +60,3 @@ class SVM_scikit(object):
         return metrics.precision_recall_fscore_support(labels, prediction),\
                metrics.confusion_matrix(labels, prediction)
 
-
-class FeatureSelection_scikit(object):
-
-    def __init__(self):
-        self.model = ExtraTreesClassifier()
-
-    def fit(self, samples, response):
-        self.model.fit(samples, response)
-
-    def importance(self):
-        log(stats.describe(self.model.feature_importances_))
-        return self.model.feature_importances_
